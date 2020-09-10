@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-S3_BUCKET=
+AWS_DEFAULT_PROFILE=${AWS_DEFAULT_PROFILE:-enview-engineering}
+S3_BUCKET=${S3_BUCKET:-"codepipeline-status-artifacts-engineering"}
 INPUT_FILE=template.yaml
 OUTPUT_FILE=template-output.yaml
-REGION=eu-central-1
+REGION=${AWS_DEFAULT_REGION:-us-west-2}
 STACK_NAME=github-commit-status-bot
 
 cd src && npm install && npm run-script lint && npm test && npm prune --production && cd ..

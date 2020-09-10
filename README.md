@@ -22,3 +22,13 @@ Finally, the deployment script can just be executed
 ```bash
 bash deploy
 ```
+
+### Engineering
+```
+AWS_DEFAULT_PROFILE=enview-engineering AWS_DEFAULT_REGION=us-west-2 S3_BUCKET=codepipeline-status-artifacts-engineering bash ./deploy.sh
+
+AWS_DEFAULT_PROFILE=enview-staging-deployer AWS_DEFAULT_REGION=us-west-2 S3_BUCKET=codepipeline-status-artifacts-staging bash ./deploy.sh
+
+AWS_DEFAULT_PROFILE=enview-production-deployer AWS_DEFAULT_REGION=us-west-2 S3_BUCKET=codepipeline-status-artifacts-prod bash ./deploy.sh
+
+```

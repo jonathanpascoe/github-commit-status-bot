@@ -9,7 +9,7 @@ Resources:
     Properties:
       CodeUri: src/
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Timeout: 3
       Policies:
         - AWSCodePipelineReadOnlyAccess
@@ -27,6 +27,24 @@ Resources:
               detail-type:
                 - "CodePipeline Pipeline Execution State Change"
               detail:
+                pipeline:
+                  - "TheUtilities_dev"
+                  - "TheCICD_dev"
+                  - "TheWebProduct_dev"
+                  - "theapi_dev"
+                  - "TheOrchestrator_dev"
+                  - "TheCICD_qa"
+                  - "TheWebProduct_qa"
+                  - "theapi_qa"
+                  - "TheOrchestrator_qa"
+                  - "TheCICD_staging"
+                  - "TheWebProduct_staging"
+                  - "theapi_staging"
+                  - "TheOrchestrator_staging"
+                  - "TheCICD_prod"
+                  - "TheWebProduct_prod"
+                  - "theapi_prod"
+                  - "TheOrchestrator_prod"
                 state:
                   - "STARTED"
                   - "SUCCEEDED"
